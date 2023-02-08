@@ -8,7 +8,8 @@
     "build": "vite build",
     "predeploy": "npm run build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e 's/src=\\//src=/g' docs/index.html ; sed -i -e 's/href=\\//href=/g' docs/index.html"
   },
   "dependencies": {
     "vue": "^3.2.45"
